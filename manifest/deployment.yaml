@@ -15,10 +15,10 @@ spec:
       labels:
         app: demo2
       annotations:
-        dapr.io/enabled: "false"
+        dapr.io/enabled: "true"
         dapr.io/app-id: demo2
         dapr.io/app-port: "8082"
-        telepresence.getambassador.io/inject-traffic-agent: enabled
+        #telepresence.getambassador.io/inject-traffic-agent: enabled
     spec:
       containers:
       - image: katsuhiro1015/demo2

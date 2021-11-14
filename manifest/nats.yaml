@@ -1,0 +1,39 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: pubsub
+  namespace: default
+spec:
+  type: pubsub.natsstreaming
+  version: v1
+  metadata:
+  - name: natsURL
+    value: "nats://nats:4222"
+  - name: natsStreamingClusterID
+    value: "stan"
+    # below are subscription configuration.
+  - name: subscriptionType
+    value: topic
+  - name: ackWaitTime
+    value: "" # Optional.
+  - name: maxInFlight
+    value: "" # Optional.
+  - name: durableSubscriptionName
+    value: "" # Optional.
+  # following subscription options - only one can be used
+  - name: deliverNew
+    value: true
+  - name: startAtSequence
+    value: 1
+  - name: startWithLastReceived
+    value: false
+  - name: deliverAll
+    value: false
+  - name: startAtTimeDelta
+    value: ""
+  - name: startAtTime
+    value: ""
+  - name: startAtTimeFormat
+    value: ""
+  - name: publishingScopes
+    value: "order=newOrder;newUser"
