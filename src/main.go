@@ -1,12 +1,13 @@
 package main
 
 import (
-	"fmt"
 	"net/http"
+
+	"k8s_demo2/output"
 )
 
 func handler(writer http.ResponseWriter, request *http.Request) {
-	fmt.Fprintf(writer, "Hello Yosistamp")
+	output.CreditLimit()
 }
 
 func main() {
