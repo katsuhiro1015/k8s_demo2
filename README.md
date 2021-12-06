@@ -65,17 +65,17 @@ $ go get github.com/deepmap/oapi-codegen/cmd/oapi-codegen@v1.9.0
 - types
 
 ```
-$ oapi-codegen -package domain -generate "types" -o src/domain/petstore.go openapi.yaml 
+$ oapi-codegen -package generate -generate "types" -o src/generate/types.go openapi.yaml 
 ```
 
 - spec
 
 ```
-$ oapi-codegen -package domain -generate "spec" -o src/domain/spec.go openapi.yaml 
+$ oapi-codegen -package generate -generate "spec" -o src/generate/spec.go openapi.yaml 
 ```
 
 - server
 
 ```
-$ oapi-codegen -package domain -generate "chi-server" -o src/domain/server.go openapi.yaml 
+$ oapi-codegen -package generate -generate "chi-server" -o src/generate/server.go openapi.yaml 
 ```
