@@ -1,5 +1,11 @@
 # k8s_demo2
 
+## go
+
+```
+$ go mod init k8s_demo2
+```
+
 # telepresence 
 
 ```
@@ -42,4 +48,34 @@ telepresence intercept demo2 --port 18081:8082 --http-match=HTTP2_HEADER=test
 
 ```
 telepresence intercept nginx --port 80:http
+```
+
+## OpenAPI
+
+oapi-codegenによるRESTインターフェースの作成
+
+### install
+
+```
+$ go get github.com/deepmap/oapi-codegen/cmd/oapi-codegen@v1.9.0
+```
+
+### Go コード生成
+
+- types
+
+```
+$ oapi-codegen -package domain -generate "types" -o src/domain/petstore.go openapi.yaml 
+```
+
+- spec
+
+```
+$ oapi-codegen -package domain -generate "spec" -o src/domain/spec.go openapi.yaml 
+```
+
+- server
+
+```
+$ oapi-codegen -package domain -generate "chi-server" -o src/domain/server.go openapi.yaml 
 ```
