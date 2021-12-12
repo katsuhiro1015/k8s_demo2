@@ -72,7 +72,7 @@ func (p *PetStore) FindPets(w http.ResponseWriter, r *http.Request, params gener
 }
 
 func (p *PetStore) AddPet(w http.ResponseWriter, r *http.Request) {
-	log.Print("add pets ok")
+	log.Print("add pets ok?")
 	// We expect a NewPet object in the request body.
 	var newPet generate.NewPet
 	if err := json.NewDecoder(r.Body).Decode(&newPet); err != nil {
